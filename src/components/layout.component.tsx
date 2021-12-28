@@ -17,8 +17,8 @@ export const LayoutComponent: FC<LayoutComponentProps> = ({ children }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className="flex flex-col w-screen min-h-screen pt-5 px-6 bg-gray-100">
-      <div className="mx-auto max-w-5xl">
-        <header className="flex justify-between mb-16">
+      <div className="container mx-auto">
+        <header className="flex justify-between mb-9 md:mb-16">
           <div>
             <h1 className="text-gray-700 text-2xl leading-7 font-semibold mb-1">
               <Link href="/">
