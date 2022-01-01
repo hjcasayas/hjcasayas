@@ -1,5 +1,8 @@
 import { StatusType } from "./enums/status-type.enum";
 import { Project } from "./models/project.model";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig();
 
 export const projectsList: Project[] = [
   {
@@ -9,7 +12,7 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-responsive.png",
     tools: ["NextJS", "TailwindCSS"],
     status: StatusType.InProgress,
-    href: `${process.env.DEV_CHALLENGES_IO_BASE_URL}/responsive`,
+    href: `${publicRuntimeConfig?.devChallengesBaseUrl || ""}/responsive`,
     designer: "DevChallenges",
     designerHref: "https://devchallenges.io/",
   },
@@ -20,7 +23,7 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-front-end.png",
     tools: ["NextJS", "TailwindCSS"],
     status: StatusType.Todo,
-    href: `${process.env.DEV_CHALLENGES_IO_BASE_URL}/front-end`,
+    href: `${publicRuntimeConfig?.devChallengesBaseUrl || ""}/front-end`,
     designer: "DevChallenges",
     designerHref: "https://devchallenges.io/",
   },
@@ -31,7 +34,7 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-full-stack.png",
     tools: ["NextJS", "TailwindCSS", "NestJS"],
     status: StatusType.Todo,
-    href: `${process.env.DEV_CHALLENGES_IO_BASE_URL}/full-stack`,
+    href: `${publicRuntimeConfig?.devChallengesBaseUrl || ""}/full-stack`,
     designer: "DevChallenges",
     designerHref: "https://devchallenges.io/",
   },
