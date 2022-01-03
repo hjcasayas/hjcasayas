@@ -24,7 +24,8 @@ RUN pnpm run build
 FROM base AS staging
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN npm install -g pnpm \
+RUN npm install -g npm@8.3.0 \
+    npm install -g pnpm \
     && pnpm install --prod --ignore-scripts
 
 COPY --from=staging-builder /app/.next/ /app/.next/
@@ -45,7 +46,8 @@ RUN pnpm run build
 FROM base AS production
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
-RUN npm install -g pnpm \
+RUN npm install -g npm@8.3.0 \
+    npm install -g pnpm \
     && pnpm install --prod --ignore-scripts
 
 COPY --from=production-builder /app/.next/ /app/.next/
