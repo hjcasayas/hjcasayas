@@ -8,6 +8,7 @@ interface ProjectCardComponent {
   designerHref?: string;
   designer?: string;
   tools?: string[];
+  index: number;
 }
 
 export const ProjectCardComponent: FC<ProjectCardComponent> = ({
@@ -17,6 +18,7 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
   designerHref,
   designer,
   tools,
+  index,
 }) => (
   <div className="bg-white rounded-lg p-4">
     <div className="mb-1">
@@ -27,6 +29,7 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
         alt={title}
         src={src}
         className="rounded-lg"
+        priority={index < 3}
       />
     </div>
     <div className="mb-3">
