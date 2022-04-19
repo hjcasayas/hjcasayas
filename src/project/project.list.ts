@@ -9,9 +9,11 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-responsive.png",
     tools: ["NextJS", "TailwindCSS"],
     status: StatusType.InProgress,
-    href: `${process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL || ""}/responsive`,
-    designer: "DevChallenges",
-    designerHref: "https://devchallenges.io/",
+    href: `${
+      process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL
+        ? process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL + "/responsive"
+        : ""
+    }`,
   },
   {
     title: "Dev Challenges - Front End",
@@ -20,9 +22,11 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-front-end.png",
     tools: ["NextJS", "TailwindCSS"],
     status: StatusType.Todo,
-    href: `${process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL || ""}/front-end`,
-    designer: "DevChallenges",
-    designerHref: "https://devchallenges.io/",
+    href: `${
+      process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL
+        ? process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL + "/front-end"
+        : ""
+    }`,
   },
   {
     title: "Dev Challenges - Full Stack",
@@ -31,8 +35,10 @@ export const projectsList: Project[] = [
     src: "/projects/dev-challenges-full-stack.png",
     tools: ["NextJS", "TailwindCSS", "NestJS"],
     status: StatusType.Todo,
-    href: `${process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL || ""}/full-stack`,
-    designer: "DevChallenges",
-    designerHref: "https://devchallenges.io/",
+    href: `${
+      process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL
+        ? process.env.NEXT_PUBLIC_DEV_CHALLENGES_BASE_URL + "/full-stack"
+        : ""
+    }`,
   },
 ];

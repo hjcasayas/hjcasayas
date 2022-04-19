@@ -7,6 +7,4 @@ export interface Project {
   src: string;
   status: StatusType;
   href: string;
-  designer?: string;
-  designerHref?: string;
 }

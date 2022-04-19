@@ -5,8 +5,6 @@ interface ProjectCardComponent {
   description: string;
   title: string;
   src: string;
-  designerHref?: string;
-  designer?: string;
   tools?: string[];
   index: number;
 }
@@ -15,8 +13,6 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
   description,
   title,
   src,
-  designerHref,
-  designer,
   tools,
   index,
 }) => (
@@ -50,20 +46,5 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
     <p className="text-gray-400 text-base leading-5 font-medium">
       {description}
     </p>
-    {designer != null && designer?.trim() != "" && (
-      <div className="text-gray-400 text-base leading-5 font-medium mt-7">
-        <label className="inline-block text-gray-400 text-base leading-5">
-          Designed By:
-        </label>{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href={designerHref}
-          className="inline-block text-gray-600 text-base leading-5 font-bold"
-        >
-          {designer}
-        </a>
-      </div>
-    )}
   </div>
 );
