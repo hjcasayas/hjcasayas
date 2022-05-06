@@ -12,14 +12,13 @@ ENTRYPOINT ["pnpm", "run"]
 CMD [ "dev" ]
 
 FROM base AS staging-builder
-ENV NODE_ENV=development
 WORKDIR /app
 COPY package.json pnpm-lock.yaml /app/
 RUN npm install -g npm@8.3.0 && \
     npm install -g pnpm && \
     pnpm install
 COPY . /app/
-RUN pnpm run build
+RUN rm .env.production.local && pnpm run build
 
 FROM base AS staging
 WORKDIR /app
