@@ -33,17 +33,17 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
         ? tools.map((t) => (
             <span
               key={t}
-              className="text-base text-gray-500 leading-5 font-medium"
+              className="text-base text-gray-500 leading-5 font-normal"
             >
               #{t}&nbsp;
             </span>
           ))
         : null}
     </div>
-    <h3 className="text-2xl leading-7 font-medium text-gray-700 mb-1">
+    <h3 className="text-lg leading-7 font-semibold text-gray-600 mb-1">
       {title}
     </h3>
-    <p className="text-gray-400 text-base leading-5 font-medium">
+    <p className="text-gray-400 text-base leading-5 font-normal">
       {description}
     </p>
   </div>

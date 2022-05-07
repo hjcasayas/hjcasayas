@@ -4,18 +4,31 @@ import { projectsList } from "../project/project.list";
 
 const HomePage: NextPage = () => {
   return (
-    <div className="mx-[-.75rem] flex flex-wrap">
-      {projectsList.map((p, index) => (
+    <div>
+      <h2 className="text-gray-800 text-xl leading-7 font-bold mb-1">
         <a
-          target="_blank"
+          className="underline"
           rel="noreferrer"
-          className="flex p-3 w-full sm:w-1/2 lg:w-1/3 cursor-pointer"
-          key={p.src}
-          href={p.href}
+          target="_blank"
+          href="https://devchallenges.io/"
         >
-          <ProjectCardComponent {...p} index={index} />
-        </a>
-      ))}
+          DevChallenges
+        </a>{" "}
+        Solutions
+      </h2>
+      <div className="mx-[-.75rem] flex flex-wrap">
+        {projectsList.map((p, index) => (
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="flex p-3 w-full sm:w-1/2 lg:w-1/3 cursor-pointer"
+            key={p.src}
+            href={p.href}
+          >
+            <ProjectCardComponent {...p} index={index} />
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
