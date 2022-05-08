@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NEXT_SHARP_PATH=/tmp/node_modules/sharp next start",
+    "start": "next start",
     "lint": "eslint --fix src/**/*.{ts,tsx}",
     "cz": "cz",
     "prepare": "husky install",

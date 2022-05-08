@@ -29,6 +29,7 @@ RUN npm install -g npm && \
 
 COPY --from=staging-builder /app/.next/ /app/.next/
 COPY --from=staging-builder /app/public/ /app/public/
+ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "pnpm", "run" ]
 CMD [ "start" ]
@@ -51,6 +52,7 @@ RUN npm install -g npm && \
 
 COPY --from=production-builder /app/.next/ /app/.next/
 COPY --from=production-builder /app/public/ /app/public/
+ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "pnpm", "run" ]
 CMD [ "start" ]
