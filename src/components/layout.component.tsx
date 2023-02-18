@@ -22,9 +22,7 @@ export const LayoutComponent: FC<LayoutComponentProps> = ({ children }) => (
         <header className="block mb-9 sm:flex sm:justify-between  sm:mb-16">
           <div>
             <h1 className="text-gray-900 text-2xl leading-7 font-bold mb-2">
-              <Link href="/">
-                <a>Henly Jade Casayas</a>
-              </Link>
+              <Link href="/">Henly Jade Casayas</Link>
             </h1>
             <p className="text-gray-500 text-lg font-medium mb-1">
               Software Developer
