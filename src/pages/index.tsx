@@ -1,6 +1,6 @@
-import { NextPage } from "next";
-import { ProjectCardComponent } from "../components/project-card.component";
-import { projectsList } from "../project/project.list";
+import { NextPage } from 'next';
+import { ProjectCardComponent } from '../components/project-card.component';
+import { frontendMentorProjectList } from '../project/frontend-mentor.project-list';
 
 const HomePage: NextPage = () => {
   return (
@@ -10,14 +10,14 @@ const HomePage: NextPage = () => {
           className="underline"
           rel="noreferrer"
           target="_blank"
-          href="https://devchallenges.io/"
+          href="https://www.frontendmentor.io/"
         >
-          DevChallenges
-        </a>{" "}
+          Frontend Mentor
+        </a>{' '}
         Solutions
       </h2>
       <div className="mx-[-.75rem] flex flex-wrap">
-        {projectsList.map((p, index) => (
+        {frontendMentorProjectList.map((p, index) => (
           <a
             target="_blank"
             rel="noreferrer"

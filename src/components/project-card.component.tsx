@@ -1,5 +1,5 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from 'react';
+import Image from 'next/image';
 
 interface ProjectCardComponent {
   description: string;
@@ -21,7 +21,6 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
       <Image
         width="1500"
         height="900"
-        layout="responsive"
         alt={title}
         src={src}
         className="rounded-lg"
