@@ -16,14 +16,14 @@ export const ProjectCardComponent: FC<ProjectCardComponent> = ({
   tools,
   index,
 }) => (
-  <div className="bg-white rounded-lg p-4">
-    <div className="mb-1">
+  <div className="bg-white rounded-lg p-4 group">
+    <div className="mb-3 overflow-hidden">
       <Image
         width="1500"
         height="900"
         alt={title}
         src={src}
-        className="rounded-lg"
+        className="rounded-lg transition group-hover:duration-300 group-hover:scale-105"
         priority={index < 3}
       />
     </div>
