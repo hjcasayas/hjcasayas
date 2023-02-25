@@ -9,6 +9,6 @@ export const frontendMentorProjectList: Project[] = [
     title: 'Product Preview Card Component',
     src: '/projects/frontend-mentor/product-preview-card-component.jpeg',
     status: StatusType.Done,
-    href: 'https://fm-product-preview-card-component-chi.vercel.app/',
+    href: 'https://fm-product-preview-card-component-hjcasayas.vercel.app/',
   },
 ];
