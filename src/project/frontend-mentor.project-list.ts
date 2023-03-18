@@ -11,4 +11,13 @@ export const frontendMentorProjectList: Project[] = [
     status: StatusType.Done,
     href: 'https://fm-product-preview-card-component-hjcasayas.vercel.app/',
   },
+  {
+    description:
+      "This responsive page is perfect if you've learned the fundamentals of HTML & CSS, completed a couple of smaller projects, and want to take it up a notch.",
+    tools: ['NextJS', 'TailwindCSS'],
+    title: 'Skilled E-learning Landing Page',
+    src: '/projects/frontend-mentor/skilled-e-learning-landing-page.jpeg',
+    status: StatusType.Done,
+    href: 'https://fm-skilled-elearning-landing-page-hjcasayas.vercel.app',
+  },
 ];
