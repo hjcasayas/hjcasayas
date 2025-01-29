@@ -1,0 +1,14 @@
+services:
+  web:
+    restart: unless-stopped
+    build:
+      dockerfile: ./Dockerfile
+      target: production
+  cloudflare:
+    image: cloudflare/cloudflared
+    restart: unless-stopped
+    hostname: cloudflared
+    container_name: cloudflared
+    command: tunnel run
+    env_file:
+      - ./.env
