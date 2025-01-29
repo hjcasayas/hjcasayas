@@ -7,8 +7,6 @@ services:
   cloudflare:
     image: cloudflare/cloudflared
     restart: unless-stopped
-    hostname: cloudflared
-    container_name: cloudflared
     command: tunnel run
     env_file:
       - ./.env
