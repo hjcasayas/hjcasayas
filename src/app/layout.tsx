@@ -1,12 +1,25 @@
+import { minio } from "@/minio";
 import "./globals.css";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaFilePdf } from "react-icons/fa";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let downloadURL = "";
+  try {
+    downloadURL = await minio.presignedUrl(
+      "GET",
+      process.env.MINIO_PERSONAL_BUCKET_NAME!,
+      process.env.MINIO_RESUME_FILE_NAME!,
+    );
+  } catch (error) {
+    console.log({ error });
+    console.log("Unable to get the downlolad URL of the resume");
+  }
+
   return (
     <html lang="en">
       <body>
@@ -46,7 +59,7 @@ export default function RootLayout({
                   className="inline-block sm:flex sm:items-center"
                   target="_blank"
                   rel="noreferrer"
-                  href="https://github.com/hjcasayas"
+                  href={downloadURL}
                 >
                   <FaFilePdf className="text-gray-500 text-2xl mr-2 sm:text-xl sm:mr-1" />
                   <span className="hidden sm:inline-block sm:text-gray-500">
