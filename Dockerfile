@@ -19,10 +19,10 @@ RUN rm .env.production.local && npm run build
 FROM base AS staging
 WORKDIR /app
 COPY package.json package-lock.json /app/
-RUN npm install --prod --ignore-scripts
+RUN npm install --omit=dev --ignore-scripts
 
 COPY --from=staging-builder /app/.next/ /app/.next/
-COPY --from=staging-builder /app/public/ /app/public/
+# COPY --from=staging-builder /app/public/ /app/public/
 ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "npm", "run" ]
@@ -38,10 +38,10 @@ RUN npm run build
 FROM base AS production
 WORKDIR /app
 COPY package.json package-lock.json /app/
-RUN npm install --prod --ignore-scripts
+RUN npm install --omit=dev --ignore-scripts
 
 COPY --from=production-builder /app/.next/ /app/.next/
-COPY --from=production-builder /app/public/ /app/public/
+# COPY --from=production-builder /app/public/ /app/public/
 ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "npm", "run" ]

@@ -33,4 +33,4 @@ yarn-error.log*
 Dockerfile
 .dockerignore
 docker-compose.yaml
-.env
+.devcontainer
