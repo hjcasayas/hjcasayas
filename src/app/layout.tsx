@@ -63,7 +63,7 @@ export default async function RootLayout({
                 >
                   <FaFilePdf className="text-gray-500 text-2xl mr-2 sm:text-xl sm:mr-1" />
                   <span className="hidden sm:inline-block sm:text-gray-500">
-                    download resume
+                    resume
                   </span>
                 </a>
               </address>
