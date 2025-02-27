@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "Node.js & TypeScript",
+  "name": "hjcasayas Portfolio",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "build": {
     "dockerfile": "Dockerfile"
@@ -14,7 +14,8 @@
       "extensions": [
         "esbenp.prettier-vscode",
         "christian-kohler.path-intellisense",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   }
