@@ -9,10 +9,12 @@
     "lint": "next lint",
     "git:commit": "cz",
     "prepare": "husky",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "docker:build": "docker build -t registry.hjcasayas.info/hjcasayas:master .",
+    "docker:push": "docker push registry.hjcasayas.info/hjcasayas:master"
   },
   "dependencies": {
-    "minio": "^8.0.4",
+    "minio": "^8.0.5",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -20,7 +22,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -31,7 +33,8 @@
     "eslint-config-next": "15.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "prettier": "^3.5.2",
+    "npm-check": "^6.0.1",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
