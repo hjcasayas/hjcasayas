@@ -1,13 +1,9 @@
-FROM node:22.13.1-alpine3.21 AS base
+FROM node:22-alpine3.22 AS base
 
 FROM base AS development
 WORKDIR /app
-COPY package.json package-lock.json /app/
-RUN npm install
-COPY . /app/
 EXPOSE 3000
-ENTRYPOINT ["npm", "run"]
-CMD [ "dev" ]
+CMD ["npm", "run", "dev" ]
 
 FROM base AS staging-builder
 WORKDIR /app
