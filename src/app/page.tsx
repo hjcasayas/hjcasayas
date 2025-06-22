@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { componentsProjectList } from "./_project/components.project-list";
 import { landingPagesProjectList } from "./_project/landing-page.project-list";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { ResumeDownload } from "./_components/resume-download";
 
 export const metadata: Metadata = {
@@ -50,9 +50,9 @@ const HomePage: NextPage = async () => {
                 https://github.com/hjcasayas
               </span>
             </Link>
-            <Suspense>
-              <ResumeDownload />
-            </Suspense>
+            {/* <Suspense> */}
+            <ResumeDownload />
+            {/* </Suspense> */}
           </address>
         </header>
         <main>

@@ -18,7 +18,7 @@ COPY package.json package-lock.json /app/
 RUN npm install --omit=dev --ignore-scripts
 
 COPY --from=staging-builder /app/.next/ /app/.next/
-# COPY --from=staging-builder /app/public/ /app/public/
+COPY --from=staging-builder /app/public/ /app/public/
 ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "npm", "run" ]
@@ -37,7 +37,7 @@ COPY package.json package-lock.json /app/
 RUN npm install --omit=dev --ignore-scripts
 
 COPY --from=production-builder /app/.next/ /app/.next/
-# COPY --from=production-builder /app/public/ /app/public/
+COPY --from=production-builder /app/public/ /app/public/
 ENV NEXT_SHARP_PATH=/tmp/node_modules/sharp
 EXPOSE 3000
 ENTRYPOINT [ "npm", "run" ]
