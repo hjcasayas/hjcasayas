@@ -1,10 +1,11 @@
 import { Metadata, NextPage } from "next";
 import { ProjectCardComponent } from "./_components/project-card.component";
 import Link from "next/link";
-import { FaEnvelope, FaFilePdf, FaGithub } from "react-icons/fa";
-import { minio } from "@/minio";
+import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { componentsProjectList } from "./_project/components.project-list";
 import { landingPagesProjectList } from "./_project/landing-page.project-list";
+import { Suspense } from "react";
+import { ResumeDownload } from "./_components/resume-download";
 
 export const metadata: Metadata = {
   title: "hjcasayas - Portfolio",
@@ -14,18 +15,6 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 const HomePage: NextPage = async () => {
-  let downloadURL = "";
-  try {
-    downloadURL = await minio.presignedUrl(
-      "GET",
-      process.env.MINIO_PERSONAL_BUCKET_NAME!,
-      process.env.MINIO_RESUME_FILE_NAME!,
-    );
-  } catch (error) {
-    console.log({ error });
-    console.log("Unable to get the downlolad URL of the resume");
-  }
-
   return (
     <div className="flex flex-col w-screen min-h-screen pt-5 px-6 bg-gray-100">
       <div className="container mx-auto">
@@ -61,19 +50,9 @@ const HomePage: NextPage = async () => {
                 https://github.com/hjcasayas
               </span>
             </Link>
-            {downloadURL === "" ? null : (
-              <Link
-                className="inline-block sm:flex sm:items-center cursor-pointer"
-                target="_blank"
-                rel="noreferrer"
-                href={downloadURL}
-              >
-                <FaFilePdf className="text-gray-500 text-2xl mr-2 sm:text-xl sm:mr-1" />
-                <span className="hidden sm:inline-block sm:text-gray-500">
-                  resume
-                </span>
-              </Link>
-            )}
+            <Suspense>
+              <ResumeDownload />
+            </Suspense>
           </address>
         </header>
         <main>
