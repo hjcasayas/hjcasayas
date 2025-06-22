@@ -10,8 +10,8 @@
     "git:commit": "cz",
     "prepare": "husky",
     "lint-staged": "lint-staged",
-    "docker:build": "docker build -t registry.hjcasayas.info/hjcasayas:master .",
-    "docker:push": "docker push registry.hjcasayas.info/hjcasayas:master"
+    "docker:build": "docker build",
+    "docker:push": "docker push"
   },
   "dependencies": {
     "minio": "^8.0.5",
