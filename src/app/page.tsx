@@ -1,18 +1,15 @@
 import { Metadata, NextPage } from "next";
-import { ProjectCardComponent } from "./_components/project-card.component";
 import Link from "next/link";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
-import { componentsProjectList } from "./_project/components.project-list";
 import { landingPagesProjectList } from "./_project/landing-page.project-list";
-// import { Suspense } from "react";
+import { archivedProjectList } from "./_project/archived-project-list";
 import { ResumeDownload } from "./_components/resume-download";
+import { ProjectListComponent } from "./_components/project-list.component";
 
 export const metadata: Metadata = {
   title: "hjcasayas - Portfolio",
   description: "Henly Jade Casayas' software developer portfolio.",
 };
-
-export const dynamic = "force-dynamic";
 
 const HomePage: NextPage = async () => {
   return (
@@ -50,50 +47,19 @@ const HomePage: NextPage = async () => {
                 https://github.com/hjcasayas
               </span>
             </Link>
-            {/* <Suspense> */}
             <ResumeDownload />
-            {/* </Suspense> */}
           </address>
         </header>
         <main>
-          {" "}
-          <div className="container mx-auto">
-            <div className="mb-4">
-              <h2 className="text-gray-800 text-xl leading-7 font-bold mb-1">
-                Landing Pages
-              </h2>
-              <div className="mx-[-.75rem] flex flex-wrap">
-                {landingPagesProjectList.map((p, index) => (
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex p-3 w-full sm:w-1/2 lg:w-1/3 cursor-pointer"
-                    key={p.image.src}
-                    href={p.href}
-                  >
-                    <ProjectCardComponent {...p} index={index} />
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div className="mb-4">
-              <h2 className="text-gray-800 text-xl leading-7 font-bold mb-1">
-                Components
-              </h2>
-              <div className="mx-[-.75rem] flex flex-wrap">
-                {componentsProjectList.map((p, index) => (
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex p-3 w-full sm:w-1/2 lg:w-1/3 cursor-pointer"
-                    key={p.image.src}
-                    href={p.href}
-                  >
-                    <ProjectCardComponent {...p} index={index} />
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <div className="container mx-auto flex flex-col gap-y-4">
+            <ProjectListComponent
+              title="Landing Pages"
+              projects={landingPagesProjectList}
+            />
+            <ProjectListComponent
+              title="Archives"
+              projects={archivedProjectList}
+            />
           </div>
         </main>
         <footer></footer>
