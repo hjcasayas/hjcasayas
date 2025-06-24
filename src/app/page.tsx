@@ -1,9 +1,8 @@
 import { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaFilePdf, FaGithub } from "react-icons/fa";
 import { landingPagesProjectList } from "./_project/landing-page.project-list";
 import { archivedProjectList } from "./_project/archived-project-list";
-import { ResumeDownload } from "./_components/resume-download";
 import { ProjectListComponent } from "./_components/project-list.component";
 
 export const metadata: Metadata = {
@@ -47,7 +46,17 @@ const HomePage: NextPage = async () => {
                 https://github.com/hjcasayas
               </span>
             </Link>
-            <ResumeDownload />
+            <Link
+              className="inline-block sm:flex sm:items-center cursor-pointer"
+              target="_blank"
+              rel="noreferrer"
+              href={`${process.env.MINIO_RESUME_FILE_NAME!}`}
+            >
+              <FaFilePdf className="text-gray-500 text-2xl mr-2 sm:text-xl sm:mr-1" />
+              <span className="hidden sm:inline-block sm:text-gray-500">
+                resume
+              </span>
+            </Link>
           </address>
         </header>
         <main>
