@@ -12,7 +12,8 @@
     "lint-staged": "lint-staged",
     "docker:build": "docker compose build",
     "docker:push": "docker compose push",
-    "docker:deploy": "docker compose up -d"
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
   },
   "dependencies": {
     "minio": "^8.0.5",

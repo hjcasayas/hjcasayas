@@ -1,14 +1,14 @@
 services:
   web:
     restart: unless-stopped
-    image: hjcasayas/portfolio:v1.4.0
+    image: hjcasayas/portfolio:v1.5.0
     build:
       dockerfile: ./Dockerfile
       target: production
       context: .
       tags:
         - hjcasayas/portfolio:latest
-        - hjcasayas/portfolio:v1.4.0
+        - hjcasayas/portfolio:v1.5.0
       platforms:
         - linux/amd64
         - linux/arm64
